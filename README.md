@@ -55,6 +55,26 @@ Em resumo, os valores das métricas **precision** e **recall** indicam que o mod
 
 ---
 
+## 💰 Impacto Potencial (Cenário Simulado)
+
+Considerando:
+- **Volume:** 1.000.000 transações/mês
+- **Taxa de fraude:** 1% (10.000 fraudes/mês)
+- **Perda média por fraude:** R$ 500
+- **Custo médio de investigação:** R$ 20 por caso
+
+**Estimativas:**
+- Fraudes detectadas: 10.000 × 80% = **8.000** fraudes/mês
+- Perdas evitadas: 8.000 × R$ 500 = **R$ 4.000.000/mês**
+- Investigações desnecessárias evitadas: **2.000/mês**  
+  → Economia de **R$ 40.000/mês** em custos operacionais
+
+💡 **Resumo:**  
+Em cenário simulado, o modelo poderia evitar **R$ 48 milhões/ano** em prejuízos diretos e operacionais.
+
+
+---
+
 ## 🛠️ Ferramentas Utilizadas
 
 - **Python** – Linguagem principal
