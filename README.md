@@ -45,32 +45,46 @@ Algoritmo utilizado:
 
 ## ✅ Resultados
 
-![image](https://github.com/user-attachments/assets/749d3058-a426-4586-b4e9-b8e6d5250290)
+# Interpretação das Métricas da Rede Neural MLP para Detecção de Fraudes
 
-O modelo obteve uma acurácia de 79% na detecção de transações legítimas e fraudulentas.Para além da acurácia em si, as métricas de **precision** e **recall** ficaram equilibradas para ambas as classes, o que é crucial no contexto de detecção de fraudes, onde o custo financeiro dos erros é assimétrico.
+Este relatório apresenta as métricas de desempenho da rede neural MLP aplicada à detecção de fraudes em transações financeiras.
 
-Com **recall** de 80% para a **classe 1** (fraude), o modelo conseguiu identificar 8 em cada 10 transações fraudulentas, o que pode levar a uma redução considerável de perdas financeiras. Além disso, com **precision** de 80%, a maioria das transações sinalizadas como fraude realmente eram suspeitas, o que minimiza custos operacionais com falsas investigações.
+| Classe        | Precision | Recall | F1-score | Support |
+|---------------|-----------|--------|----------|---------|
+| 0             | 0.88      | 0.81   | 0.84     | 363     |
+| 1             | 0.84      | 0.90   | 0.87     | 394     |
+| **Accuracy**  |           |        | **0.85** | 757     |
+| **Macro avg** | 0.86      | 0.85   | 0.85     | 757     |
+| **Weighted avg** | 0.86   | 0.85   | 0.85     | 757     |
 
-Em resumo, os valores das métricas **precision** e **recall** indicam que o modelo tem boa capacidade preditiva de ajudar a reduzir custos operacionais com fraudes tanto em casos de falsos positivos (detectar como fraude uma transação legítima) quanto em casos de falsos negativos (detectar como legítima uma transação fraudulenta), o que é confirmado pelo valor do **F1-Score**.
+## Análise Geral
+
+- A **acurácia geral** do modelo é de 85%, indicando que ele classificou corretamente 85% das transações.
+- O **recall da classe fraude (90%)** é alto, mostrando que o modelo consegue detectar a maioria das fraudes, minimizando falsos negativos.
+- A **precisão da classe fraude (84%)** indica que a maioria das transações classificadas como fraude são realmente fraudulentas, reduzindo falsos positivos.
+- Para a classe não fraude, o modelo apresenta precisão de 88% e recall de 81%, o que indica que uma pequena parte das transações legítimas pode ser sinalizada como fraude (falsos positivos).
+- O modelo apresenta um bom equilíbrio entre capturar fraudes com sensibilidade e evitar falsos alarmes.
+
+Essas métricas indicam que o modelo é eficaz para uso em sistemas de prevenção a fraudes, garantindo alta detecção de casos fraudulentos e mantendo os erros dentro de níveis aceitáveis.
+
 
 ---
 
-## 💰 Impacto Potencial (Cenário Simulado)
+## 💰 Impacto Financeiro Potencial 
 
-Considerando:
-- **Volume:** 1.000.000 transações/mês
-- **Taxa de fraude:** 1% (10.000 fraudes/mês)
-- **Perda média por fraude:** R$ 500
-- **Custo médio de investigação:** R$ 20 por caso
+O modelo gerou impactos financeiros relevantes na detecção de fraudes, conforme detalhado abaixo:
 
-**Estimativas:**
-- Fraudes detectadas: 10.000 × 80% = **8.000** fraudes/mês
-- Perdas evitadas: 8.000 × R$ 500 = **R$ 4.000.000/mês**
-- Investigações desnecessárias evitadas: **2.000/mês**  
-  → Economia de **R$ 40.000/mês** em custos operacionais
+- **Custo de Falsos Positivos:** R$ 180.432,57  
+  (Valor gasto devido a transações legítimas incorretamente classificadas como fraude)
 
-💡 **Resumo:**  
-Em cenário simulado, o modelo poderia evitar **R$ 48 milhões/ano** em prejuízos diretos e operacionais.
+- **Economia de Verdadeiros Positivos:** R$ 923.082,56  
+  (Valor economizado ao detectar corretamente transações fraudulentas)
+
+- **Impacto Monetário Líquido:** R$ 742.649,99  
+  (Economia total após considerar os custos gerados pelos falsos positivos)
+
+Esses números mostram que o modelo contribui para uma economia financeira significativa ao reduzir perdas com fraudes, mesmo levando em conta os custos dos falsos alarmes.
+
 
 
 ---
