@@ -21,7 +21,6 @@ __pycache__/
 *.log
 
 # Data files (large or sensitive datasets should not be versioned)
-*.csv
 *.tsv
 *.xlsx
 *.json
