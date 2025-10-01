@@ -1,0 +1,42 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Data files (large or sensitive datasets should not be versioned)
+*.csv
+*.tsv
+*.xlsx
+*.json
+
+# Trained models / large binaries
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# Temporary files
+*.tmp
+*.swp
+
+# IDE and editor settings
+.vscode/
+.idea/
