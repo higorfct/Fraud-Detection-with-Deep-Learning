@@ -1,5 +1,3 @@
-# Project 5: Fraud Detection
-
 # 📊 Project: Fraudulent Transaction Detection
 
 ## 📝 Introduction
