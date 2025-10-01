@@ -12,7 +12,7 @@ With this approach, the business can be supported in risk assessment, increasing
 1. **Clone the repository and install dependencies:**
     ```bash
     git clone https://github.com/higorfct/Fraud-Detection-with-Deep-Learning
-    cd Churn=Analysis
+    cd Fraud-Detection-with-Deep-Learning
     pip install -r requirements.txt
     ```
 
