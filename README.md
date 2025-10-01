@@ -3,6 +3,19 @@
 The main goal of this project is to **detect suspicious or fraudulent transactions** for a store that operates both in physical and online commerce, in order to reduce financial losses for the institution.  
 With this approach, the business can be supported in risk assessment, increasing the effectiveness of fraud detection while avoiding unnecessary blocking of legitimate transactions.
 
+
+---
+
+
+## 🚀 How to use
+
+1. **Clone the repository and install dependencies:**
+    ```bash
+    git clone https://github.com/higorfct/Fraud-Detection-with-Deep-Learning
+    cd Churn=Analysis
+    pip install -r requirements.txt
+    ```
+
 ---
 
 ## 📊 Data
