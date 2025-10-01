@@ -1,55 +1,61 @@
-# Projeto 5: Detecção de Fraudes
+# Project 5: Fraud Detection
 
-# 📊 Projeto: Detecção de Transações Fraudulentas
+# 📊 Project: Fraudulent Transaction Detection
 
-## 📝 Introdução
+## 📝 Introduction
 
-Neste trabalho, tem-se como principal objetivo **detectar transações suspeitas ou fraudulentas** para uma loja que atua tanto no comércio físico quanto online a fim de reduzir perdas financeiras para a instituição.  
-Com essa abordagem, é possível apoiar o negócio na avaliação de riscos, aumentando a eficácia na detecção de fraudes enquanto se evita bloqueios desnecessários de transações legítimas.
-
----
-
-## 📊 Dados
-
-- Conjunto de Dados: `fraudes.csv`
-- Quantidade de Registros: 3.784
-- Quantidade de Atributos: 4
-- Atributo-Alvo: `Class` (0 = Transação Válida, 1 = Transação Fraudulenta)
-- Atributos previsores: `amount`(valor da transação), `time`(hora da transação) e `location`(localização da transação)
+The main goal of this project is to **detect suspicious or fraudulent transactions** for a store that operates both in physical and online commerce, in order to reduce financial losses for the institution.  
+With this approach, the business can be supported in risk assessment, increasing the effectiveness of fraud detection while avoiding unnecessary blocking of legitimate transactions.
 
 ---
 
-### Etapas realizadas:
-- Importação das bibliotecas necessárias
-- Carregamento do dataset
-- Verificação da quantidade de registros e atributos
-- Checagem de valores faltantes
-- Pré-processamento (engenharia de atributos, normalização e divisão entre treino e teste)
-- Aplicação de uma Rede Neural MLP para detecção de transações fraudulentas
+## 📊 Data
+
+- Dataset: `fraudes.csv`  
+- Number of Records: 3,784  
+- Number of Attributes: 4  
+- Target Attribute: `Class` (0 = Valid Transaction, 1 = Fraudulent Transaction)  
+- Predictor Attributes: `amount` (transaction value), `time` (transaction time), and `location` (transaction location)
 
 ---
 
-## 🤖 Modelagem Preditiva
-
-Algoritmo utilizado:
-- **Rede Neural MLP (MLPClassifier)**
-
-- Foi executado uma **tunagem de hiperparâmetros** (RandomizedSearchCV) para encontrar a combinação ótima.
-- Os parâmetros otimizados incluem:
-  - `hidden_layer_sizes`
-  - `activation`
-  - `solver`
-  - `alpha`
+### Steps performed:
+- Importing necessary libraries  
+- Loading the dataset  
+- Checking the number of records and attributes  
+- Checking for missing values  
+- Preprocessing (feature engineering, normalization, and train-test split)  
+- Applying an MLP Neural Network for fraudulent transaction detection  
 
 ---
 
-## ✅ Resultados
+## 🤖 Predictive Modeling
 
-# Interpretação das Métricas da Rede Neural MLP para Detecção de Fraudes
+Algorithm used:
+- **MLP Neural Network (MLPClassifier)**
 
-Este relatório apresenta as métricas de desempenho da rede neural MLP aplicada à detecção de fraudes em transações financeiras.
+### Why MLP Neural Network?
 
-| Classe        | Precision | Recall | F1-score | Support |
+The MLP Neural Network was chosen due to its ability to capture complex, non-linear relationships between transaction features.  
+It is particularly effective for imbalanced datasets, allowing high recall for fraudulent transactions while keeping false positives low.  
+With proper preprocessing, normalization, and hyperparameter tuning, the MLP provides robust performance for real-time fraud detection systems.
+
+- A **hyperparameter tuning** (RandomizedSearchCV) was performed to find the optimal combination.  
+- The optimized parameters include:  
+  - `hidden_layer_sizes`  
+  - `activation`  
+  - `solver`  
+  - `alpha`  
+
+---
+
+## ✅ Results
+
+# Interpretation of MLP Neural Network Metrics for Fraud Detection
+
+This report presents the performance metrics of the MLP neural network applied to fraud detection in financial transactions.
+
+| Class         | Precision | Recall | F1-score | Support |
 |---------------|-----------|--------|----------|---------|
 | 0             | 0.88      | 0.81   | 0.84     | 363     |
 | 1             | 0.84      | 0.90   | 0.87     | 394     |
@@ -57,69 +63,67 @@ Este relatório apresenta as métricas de desempenho da rede neural MLP aplicada
 | **Macro avg** | 0.86      | 0.85   | 0.85     | 757     |
 | **Weighted avg** | 0.86   | 0.85   | 0.85     | 757     |
 
-## Análise Geral
+---
 
-- A **acurácia geral** do modelo é de 85%, indicando que ele classificou corretamente 85% das transações.
-- O **recall da classe fraude (90%)** é alto, mostrando que o modelo consegue detectar a maioria das fraudes, minimizando falsos negativos.
-- A **precisão da classe fraude (84%)** indica que a maioria das transações classificadas como fraude são realmente fraudulentas, reduzindo falsos positivos.
-- Para a classe não fraude, o modelo apresenta precisão de 88% e recall de 81%, o que indica que uma pequena parte das transações legítimas pode ser sinalizada como fraude (falsos positivos).
-- O modelo apresenta um bom equilíbrio entre capturar fraudes com sensibilidade e evitar falsos alarmes.
+## General Analysis
 
-Essas métricas indicam que o modelo é eficaz para uso em sistemas de prevenção a fraudes, garantindo alta detecção de casos fraudulentos e mantendo os erros dentro de níveis aceitáveis.
+- The model’s **overall accuracy** is 85%, meaning it correctly classified 85% of transactions.  
+- The **recall for the fraud class (90%)** is high, showing that the model can detect most fraud cases, minimizing false negatives.  
+- The **precision for the fraud class (84%)** indicates that most transactions classified as fraud are indeed fraudulent, reducing false positives.  
+- For the non-fraud class, the model has 88% precision and 81% recall, meaning a small portion of legitimate transactions may be flagged as fraud (false positives).  
+- The model shows a good balance between capturing fraud with sensitivity and avoiding false alarms.  
 
+These metrics indicate that the model is effective for use in fraud prevention systems, ensuring high fraud detection while keeping errors within acceptable levels.  
 
 ---
 
-## 💰 Impacto Financeiro Potencial 
+## 💰 Model Economic Impact
 
-O modelo gerou impactos financeiros relevantes na detecção de fraudes, conforme detalhado abaixo:
+The model generated significant financial impact in fraud detection, as detailed below:
 
-- **Custo de Falsos Positivos:** R$ 180.432,57  
-  (Valor gasto devido a transações legítimas incorretamente classificadas como fraude)
+- **Cost of False Positives:** R$ 190,892.43 (≈ $38,178.49)  
+  (Amount lost due to legitimate transactions incorrectly classified as fraud)
 
-- **Economia de Verdadeiros Positivos:** R$ 923.082,56  
-  (Valor economizado ao detectar corretamente transações fraudulentas)
+- **Savings from True Positives:** R$ 894,317.94 (≈ $178,863.59)  
+  (Amount saved by correctly detecting fraudulent transactions)
 
-- **Impacto Monetário Líquido:** R$ 742.649,99  
-  (Economia total após considerar os custos gerados pelos falsos positivos)
+- **Net Monetary Impact:** R$ 703,425.52 (≈ $140,685.10)  
+  (Total savings after considering costs generated by false positives)
 
-Esses números mostram que o modelo contribui para uma economia financeira significativa ao reduzir perdas com fraudes, mesmo levando em conta os custos dos falsos alarmes.
-
-
+These figures show that the model contributes to substantial financial savings by reducing fraud-related losses, even when accounting for false alarm costs.
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
+## 🛠️ Tools Used
 
-- **Python** – Linguagem principal
-- **Pandas** – Manipulação e análise de dados
-- **Matplotlib / Seaborn** – Visualização gráfica
-- **Scikit-learn** – Modelagem preditiva e métricas
-- **Jupyter Notebook** – Ambiente de desenvolvimento
-
----
-
-## 🧠 Conclusão
-
-A **Rede Neural Artificial (MLP)** mostrou que é capaz de:
-
-- Detectar transações fraudulentas com **eficácia**, enquanto mantém um **número relativamente baixo de falsos positivos**.
-- A avaliação revela que o modelo é particularmente robusto para um problema onde o conjunto de dados é **altamente desbalanceado**.
-- A detecção automática permitirá às empresas prevenir fraudes em tempo real, aumentando a **segunrança** nas transações financeiras.
+- **Python** – Main programming language  
+- **Pandas** – Data manipulation and analysis  
+- **Matplotlib / Seaborn** – Data visualization  
+- **Scikit-learn** – Predictive modeling and metrics  
+- **Jupyter Notebook** – Development environment  
 
 ---
 
-## 🔄 Próximos Passos
+## 🧠 Conclusion
 
-- Implementar o modelo em um pipeline de produção junto às transações em tempo real.
-- Realizar um **fine-tuning** dos parâmetros para obter ainda maior recall.
-- Experimentar outros algoritmos (Gradient Boosting, LightGBM, XGBoost) para melhoria de desempenho.
+The **Artificial Neural Network (MLP)** proved to be capable of:
+
+- Detecting fraudulent transactions with **effectiveness**, while maintaining a **relatively low number of false positives**.  
+- The evaluation shows that the model is particularly robust for a problem where the dataset is **highly imbalanced**.  
+- Automatic detection will allow companies to prevent fraud in real time, increasing **security** in financial transactions.  
 
 ---
 
-🧑‍💻 **Autor e Contato**
+## 🔄 Next Steps
+
+- Implement the model in a production pipeline alongside real-time transactions.  
+- Perform further **fine-tuning** of parameters to achieve even higher recall.  
+- Experiment with other algorithms (Gradient Boosting, LightGBM, XGBoost) for performance improvement.  
+
+---
+
+🧑‍💻 **Author & Contact**
 
 **Higor Roberto Coutinho Caetano**  
 **LinkedIn**: [https://www.linkedin.com/in/higor-caetano-049521136/](https://www.linkedin.com/in/higor-caetano-049521136/)  
-**E-mail**: higorfct@gmail.com
-
+**Email**: higorfct@gmail.com  
