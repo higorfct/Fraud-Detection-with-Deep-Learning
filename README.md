@@ -1,5 +1,3 @@
-# 📊 Project: Fraudulent Transaction Detection
-
 ## 📝 Introduction
 
 The main goal of this project is to **detect suspicious or fraudulent transactions** for a store that operates both in physical and online commerce, in order to reduce financial losses for the institution.  
